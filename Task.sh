@@ -14,29 +14,31 @@ while [ $user_input != "6" ];
 do
     
     if [ $user_input == "1" ]; then
-        
-        ipconfig
+        sudo ipconfig
         break
     
     elif [ $user_input == "2" ]; then
-        ping 192.168.1.1 -c 5
+        echo "What is your Ip address"
+        read ip_address
+        ping "$ip_address" -c 5
         break
     
     elif [ $user_input == "3" ]; then
-        nmap -sn 192.168.1.0/24
+        echo "What is your Ip address"
+        read ip_address
+        sudo nmap -sn "$ip_address" 
         break
 
     elif [ $user_input == "4" ]; then
-        echo "Display Routing Table"
+        ip route
         break
 
     
     elif [ $user_input == "5" ]; then
-        echo "Traceroute to Host"
+        tracert 192.168.1.1
         break
    
     else 
-
         echo "Option not valid. Please choose a command between 1-5. If you want to leave press 6" 
         read user_input
     fi
