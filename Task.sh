@@ -1,6 +1,7 @@
 #!/bin/bash
 
-echo "Select the which options do you want to use from 1-5. If you want to leave please press 6"
+echo "Select which option do you want to use from 1-5. If you want to leave please press 6"
+echo 
 echo "Option 1 - Check Network Interface Information"
 echo "Option 2 - Ping a Host"
 echo "Option 3 - Port Scan with Nmap"
@@ -14,7 +15,7 @@ while [ $user_input != "6" ];
 do
     
     if [ $user_input == "1" ]; then
-        sudo ifconfig
+        ifconfig
         break
     
     elif [ $user_input == "2" ]; then
@@ -41,7 +42,7 @@ do
         break
    
     else 
-        echo "Option not valid. Please choose a command between 1-5. If you want to leave press 6" 
+        echo "Option not valid. Please choose a option between 1-5. If you want to leave press 6" 
         read user_input
     fi
 
