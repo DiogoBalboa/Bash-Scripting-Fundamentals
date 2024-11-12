@@ -14,11 +14,11 @@ while [ $user_input != "6" ];
 do
     
     if [ $user_input == "1" ]; then
-        sudo ipconfig
+        sudo ifconfig
         break
     
     elif [ $user_input == "2" ]; then
-        echo "What is your Ip address"
+        echo "What Ip address do you want to ping ?"
         read ip_address
         ping "$ip_address" -c 5
         break
@@ -35,7 +35,9 @@ do
 
     
     elif [ $user_input == "5" ]; then
-        tracert 192.168.1.1
+        echo "What is your Ip address"
+        read ip_address
+        traceroute "$ip_address"
         break
    
     else 
